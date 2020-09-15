@@ -12,19 +12,19 @@ public class TCPServer {
     public static final int SERVER_PORT = 6969;
 
     public static void main(String[] args) {
-        ServerSocket server;
         try {
             System.out.println("Binding to the port: " + SERVER_PORT);
-            server = new ServerSocket(SERVER_PORT);
+            ServerSocket server = new ServerSocket(SERVER_PORT);
             System.out.println("Connected to port: " + SERVER_PORT);
             System.out.println("Waiting for client....");
         while (true){
             System.out.println("");
             Socket socket = server.accept();
-            System.out.println("Client connected. Ready to chat.");
+            System.out.println("Client connected. Ready to exchange.");
 
             OutputStream os = socket.getOutputStream();
             InputStream is = socket.getInputStream();
+
             int ch = 0;
             while (true){
                 ch = is.read();
