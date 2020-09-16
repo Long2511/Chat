@@ -19,7 +19,7 @@ public class TCPClient {
             byte[] data = new byte[0];
             System.in.read(data);
             os.write(data);
-
+            is.read();
         } catch (UnknownHostException e) {
             e.printStackTrace();
         } catch (IOException e) {

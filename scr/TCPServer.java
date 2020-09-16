@@ -1,11 +1,8 @@
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.net.InetAddress;
-import java.util.Scanner;
 
 public class TCPServer {
 
@@ -18,14 +15,13 @@ public class TCPServer {
             System.out.println("Connected to port: " + SERVER_PORT);
             System.out.println("Waiting for client....");
         while (true){
-            System.out.println("");
             Socket socket = server.accept();
             System.out.println("Client connected. Ready to exchange.");
 
             OutputStream os = socket.getOutputStream();
             InputStream is = socket.getInputStream();
 
-            int ch = 0;
+            int ch= 0;
             while (true){
                 ch = is.read();
                 if (ch==-1){
